@@ -1,0 +1,2531 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/w/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare./ajax/libs/animate.css/3.7.2/animate.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+<link rel='stylesheet' href='https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'><link rel="stylesheet" href="./style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+ 
+<title>DepWeb Studio - Digital Marketing Agency
+   DepWeb Studio adalah digital marketing agency terpercaya di Indonesia, menawarkan layanan desain website profesional, SEO, aplikasi perusahaan, pemasaran digital, dan keamanan siber. Dengan tim ahli berpengalaman, kami menyediakan solusi yang disesuaikan untuk membantu bisnis Anda tumbuh dan meningkatkan visibilitas online. Hubungi kami untuk konsultasi gratis </title>
+    <meta name="description" content="DepWeb Studio adalah digital marketing agency terpercaya di Indonesia, menawarkan layanan desain website profesional, SEO, aplikasi perusahaan, pemasaran digital, dan keamanan siber. Dengan tim ahli berpengalaman, kami menyediakan solusi yang disesuaikan untuk membantu bisnis Anda tumbuh dan meningkatkan visibilitas online. Hubungi kami untuk konsultasi gratis!">
+
+  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+        .boor {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .foory {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+        .comment-form, .comment, .old-comments, .oldest-comments {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .comment-form:hover, .comment:hover, .old-comments:hover, .oldest-comments:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .stars {
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 30px;
+            padding-left: 33%;
+        }
+        .star {
+            font-size: 30px;
+            color: rgb(58,186,18);
+            transition: color 0.3s;
+        }
+        .star.selected {
+            color: green;
+        }
+        #submit-comment {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        #submit-comment:hover {
+            background-color: #218838;
+        }
+        .reply-button, .reply-submit {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        .reply-button:hover, .reply-submit:hover {
+            background-color: #218838;
+        }
+        .reply-form {
+            display: none;
+            margin-top: 10px;
+        }
+        .reply-input {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .toggle-old-comments {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+            width:170px;
+            height:60px;
+            position:center;
+        }
+        .toggle-old-comments:hover {
+            background-color: #0056b3;
+        }
+        .old-comments, .oldest-comments {
+            display: none;
+        }
+        .comment-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .comment-date {
+            font-size: 0.8em;
+            color: #999;
+        }
+        .comment-user {
+            font-weight: bold;
+        }
+        .comment-hidden-number {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .container {
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .icon {
+            margin-right: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+        .depp {
+            color: #031ccb;
+            text-align: center;
+        }
+        .fa-star, .fa-paper-plane, .fa-chevron-down, .fa-chevron-up {
+            color: #ffcc00; /* Warna untuk ikon FA */
+        }
+    </style>
+<style>
+        .boyy{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border-radius:10px;
+        }
+
+        .boyy {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: #333;
+            padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                color: #ffffff;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                color: #ff00ff;
+                text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            }
+        }
+
+        .ner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .tim {
+            position: relative;
+            padding: 20px 0;
+            margin-left: 30px; /* Menambahkan margin untuk memisahkan dari garis */
+        }
+
+        .tim::before {
+            content: '';
+            position: absolute;
+            left: 15px; /* Posisi garis timeline */
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: #007BFF;
+            z-index: 1;
+        }
+
+        .step {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 60px; /* Memberi ruang untuk nomor langkah */
+        }
+
+        .step-number {
+            position: absolute;
+            left: -40px; /* Mengatur posisi lingkaran nomor langkah */
+            background: #007BFF;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 2; /* Mengatur z-index agar nomor di atas garis */
+            transition: background 0.3s;
+            border: 4px solid white; /* Garis putih di tengah lingkaran */
+            top:35px;
+        }
+
+        .step-number:hover {
+            background: #0056b3; /* Mengubah warna saat hover */
+        }
+
+        .step-content {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .step-content:hover {
+            transform: translateY(-3px); /* Efek mengangkat saat hover */
+        }
+
+        .step-content h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #007BFF;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .step-content p {
+            margin: 5px 0;
+        }
+
+        .info {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .info li {
+            background: rgba(0, 123, 255, 0.2);
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+            transition: background 0.3s;
+            display: flex; /* Menggunakan flexbox untuk menata konten */
+            align-items: center; /* Rata tengah vertikal */
+        }
+
+        .info li i {
+            margin-right: 10px; /* Jarak antara ikon dan teks */
+            color: #007BFF; /* Warna ikon */
+            font-size: 20px; /* Ukuran ikon */
+        }
+
+        .info li:hover {
+            background: rgba(0, 123, 255, 0.5);
+        }
+
+        @media (min-width: 600px) {
+            .step {
+                display: flex;
+                align-items: flex-start;
+            }
+        }
+    </style>
+<style>
+  
+/*PEN STYLES*/
+
+ 
+ #dibo{
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.6%;
+  background: #fff;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+}
+.blog-card a {
+  color: inherit;
+}
+.blog-card a:hover {
+  color: #5ad67d;
+}
+.blog-card:hover .photo {
+  transform: scale(1.3) rotate(3deg);
+}
+.blog-card .meta {
+  position: relative;
+  z-index: 0;
+  height: 200px;
+}
+.blog-card .photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s;
+}
+.blog-card .details,
+.blog-card .details ul {
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+.blog-card .details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  margin: auto;
+  transition: left 0.2s;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.blog-card .details a {
+  -webkit-text-decoration: dotted underline;
+          text-decoration: dotted underline;
+}
+.blog-card .details ul li {
+  display: inline-block;
+}
+.blog-card .details .author:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "";
+}
+.blog-card .details .date:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "";
+}
+.blog-card .details .tags ul:before {
+  font-family: FontAwesome;
+  content: "";
+  margin-right: 10px;
+}
+.blog-card .details .tags li {
+  margin-right: 2px;
+}
+.blog-card .details .tags li:first-child {
+  margin-left: -4px;
+}
+.blog-card .description {
+  padding: 1rem;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+.blog-card .description h1,
+.blog-card .description h2 {
+  font-family: Poppins, sans-serif;
+}
+.blog-card .description h1 {
+  line-height: 1;
+  margin: 0;
+  font-size: 1.7rem;
+}
+.blog-card .description h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #a2a2a2;
+  margin-top: 5px;
+}
+.blog-card .description .read-more {
+  text-align: right;
+}
+.blog-card .description .read-more a {
+  color: #5ad67d;
+  display: inline-block;
+  position: relative;
+}
+.blog-card .description .read-more a:after {
+  content: "";
+  font-family: FontAwesome;
+  margin-left: -10px;
+  opacity: 0;
+  vertical-align: middle;
+  transition: margin 0.3s, opacity 0.3s;
+}
+.blog-card .description .read-more a:hover:after {
+  margin-left: 5px;
+  opacity: 1;
+}
+.blog-card p {
+  position: relative;
+  margin: 1rem 0 0;
+}
+.blog-card p:first-of-type {
+  margin-top: 1.25rem;
+}
+.blog-card p:first-of-type:before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  background: #5ad67d;
+  width: 35px;
+  top: -0.75rem;
+  border-radius: 3px;
+}
+.blog-card:hover .details {
+  left: 0%;
+}
+@media (min-width: 500px) {
+  .blog-card {
+    flex-direction: row;
+    max-width: 700px;
+  }
+  .blog-card .meta {
+    flex-basis: 40%;
+    height: auto;
+  }
+  .blog-card .description {
+    flex-basis: 60%;
+  }
+  .blog-card .description:before {
+    transform: skewX(-3deg);
+    content: "";
+    background: #fff;
+    width: 30px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .blog-card.alt {
+    flex-direction: row-reverse;
+  }
+  .blog-card.alt .description:before {
+    left: inherit;
+    right: -10px;
+    transform: skew(3deg);
+  }
+  .blog-card.alt .details {
+    padding-left: 25px;
+  }
+}
+.card--rating-wrapper {
+  display: flex;
+  align-items: baseline;
+}
+.card--rating-stars--wrapper {
+  display: flex;
+  margin-right: 10px;
+}
+.card--rating-star {
+  position: relative;
+  color: #b6b6b6;
+  margin-right: 2px;
+}
+.card--rating-star.filled:after {
+  position: absolute;
+  left: 0;
+  content:"\2605";
+  color: #D99525;
+}
+.card--rating-count {
+  font-size: 12px;
+}
+</style>
+<style>
+        body {
+            background-color: #eef2f3;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #007bff; /* Warna utama Bootstrap */
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .reason {
+            background: #ffffff; /* Latar belakang putih */
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #007bff; /* Warna batas */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .reason:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .reason i {
+            font-size: 60px; /* Ukuran ikon */
+            color: #007bff; /* Warna ikon */
+            margin-bottom: 10px;
+        }
+
+        .reason h2 {
+            font-size: 1.7em;
+            margin-bottom: 10px;
+            color: #007bff; /* Warna judul */
+        }
+
+        .reason p {
+            font-size: 1em;
+            color: #333;
+        }
+    </style>
+<style>
+      /* Mencegah overflow horizontal pada body */
+      body {
+         margin: 0;
+         padding: 0;
+         overflow-x: hidden; /* Menghindari elemen bergeser ke kanan */
+         background: #edf8f5;
+      }
+
+      /* Mengatur max-width agar tidak melebihi layar perangkat */
+      .blog-card, .accordion, .panel {
+         max-width: 100%;
+         box-sizing: border-box; /* Pastikan padding termasuk dalam lebar elemen */
+      }
+
+      .accordion {
+         width: 100%; /* Sesuaikan lebar agar tetap responsif */
+      }
+
+      .circle {
+         max-width: 60px; /* Batasi ukuran lingkaran agar tidak terlalu besar di perangkat kecil */
+         height: 60px; 
+         line-height: 60px; /* Untuk memastikan teks tetap di tengah */
+      }
+
+      /* Sesuaikan ukuran elemen pada layar kecil */
+      @media (max-width: 640px) {
+         .blog-card {
+            flex-direction: column;
+            width: 100%;
+         }
+
+         .new_footer_area {
+            padding: 60px 0px 150px; /* Kurangi padding pada footer */
+         }
+
+         /* Pastikan gambar tidak melebar keluar layar */
+         .photo {
+            width: 100%;
+            height: auto;
+         }
+      }
+
+   </style>
+<style>
+.accordion {
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion i {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    color: #4CAF50;
+}
+
+.accordion:hover {
+    background-color: #e3f2fd;
+}
+
+.accordion.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.accordion.active i {
+    color: white;
+    transform: rotate(180deg);
+}
+
+.panel {
+    padding: 15px;
+    background-color: #f9f9f9;
+    display: none;
+    border: 1px solid #ddd;
+    border-top: none;
+    margin-bottom: 10px;
+    border-radius: 0 0 5px 5px;
+    transition: max-height 0.3s ease;
+}
+
+
+    .accordion {
+        font-size: 16px; /* Mengurangi ukuran font untuk perangkat kecil */
+        padding: 15px; /* Menyesuaikan padding */
+    }
+
+    .panel {
+        padding: 10px; /* Mengurangi padding panel */
+    }
+}
+    </style>
+<style>
+  
+/*PEN STYLES*/
+
+ 
+ #dibo{
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.6%;
+  background: #fff;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+}
+.blog-card a {
+  color: inherit;
+}
+.blog-card a:hover {
+  color: #5ad67d;
+}
+.blog-card:hover .photo {
+  transform: scale(1.3) rotate(3deg);
+}
+.blog-card .meta {
+  position: relative;
+  z-index: 0;
+  height: 200px;
+}
+.blog-card .photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.2s;
+}
+.blog-card .details,
+.blog-card .details ul {
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+.blog-card .details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  margin: auto;
+  transition: left 0.2s;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.blog-card .details a {
+  -webkit-text-decoration: dotted underline;
+          text-decoration: dotted underline;
+}
+.blog-card .details ul li {
+  display: inline-block;
+}
+.blog-card .details .author:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "";
+}
+.blog-card .details .date:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "";
+}
+.blog-card .details .tags ul:before {
+  font-family: FontAwesome;
+  content: "";
+  margin-right: 10px;
+}
+.blog-card .details .tags li {
+  margin-right: 2px;
+}
+.blog-card .details .tags li:first-child {
+  margin-left: -4px;
+}
+.blog-card .description {
+  padding: 1rem;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+.blog-card .description h1,
+.blog-card .description h2 {
+  font-family: Poppins, sans-serif;
+}
+.blog-card .description h1 {
+  line-height: 1;
+  margin: 0;
+  font-size: 1.7rem;
+}
+.blog-card .description h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #a2a2a2;
+  margin-top: 5px;
+}
+.blog-card .description .read-more {
+  text-align: right;
+}
+.blog-card .description .read-more a {
+  color: #5ad67d;
+  display: inline-block;
+  position: relative;
+}
+.blog-card .description .read-more a:after {
+  content: "";
+  font-family: FontAwesome;
+  margin-left: -10px;
+  opacity: 0;
+  vertical-align: middle;
+  transition: margin 0.3s, opacity 0.3s;
+}
+.blog-card .description .read-more a:hover:after {
+  margin-left: 5px;
+  opacity: 1;
+}
+.blog-card p {
+  position: relative;
+  margin: 1rem 0 0;
+}
+.blog-card p:first-of-type {
+  margin-top: 1.25rem;
+}
+.blog-card p:first-of-type:before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  background: #5ad67d;
+  width: 35px;
+  top: -0.75rem;
+  border-radius: 3px;
+}
+.blog-card:hover .details {
+  left: 0%;
+}
+@media (min-width: 640px) {
+  .blog-card {
+    flex-direction: row;
+    max-width: 700px;
+  }
+  .blog-card .meta {
+    flex-basis: 40%;
+    height: auto;
+  }
+  .blog-card .description {
+    flex-basis: 60%;
+  }
+  .blog-card .description:before {
+    transform: skewX(-3deg);
+    content: "";
+    background: #fff;
+    width: 30px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .blog-card.alt {
+    flex-direction: row-reverse;
+  }
+  .blog-card.alt .description:before {
+    left: inherit;
+    right: -10px;
+    transform: skew(3deg);
+  }
+  .blog-card.alt .details {
+    padding-left: 25px;
+  }
+}
+.card--rating-wrapper {
+  display: flex;
+  align-items: baseline;
+}
+.card--rating-stars--wrapper {
+  display: flex;
+  margin-right: 10px;
+}
+.card--rating-star {
+  position: relative;
+  color: #b6b6b6;
+  margin-right: 2px;
+}
+.card--rating-star.filled:after {
+  position: absolute;
+  left: 0;
+  content:"\2605";
+  color: #D99525;
+}
+.card--rating-count {
+  font-size: 12px;
+}
+</style>
+<style>
+  .bungkus11{
+   background-image:
+   url("https://i.ibb.co.com/c1cXQgB/eaaccd5888d21e5c260266711e6f1f67.jpg");
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  border-radius:5px;
+   color:rgba(255,255,255,0.971);
+    padding:10%;
+    padding-top:5%;
+   padding-bottom: 5%;
+     
+  }
+  .acd{
+    text-align:left;
+       font-size:120%;
+       margin-left:5%;
+       margin-right:5px;
+      color:#ffffff;
+  }
+  .vl{
+
+        border-left: 4px solid #dddbed;
+        height: auto;
+      margin-left: 2px
+  }
+
+  .gar{
+            background-color: #9aa9f1;
+            border-top: 2px dashed #45e9e7;
+  }
+</style>
+
+<style>
+  .body {
+    background: #edf8f5;
+}
+
+.new_footer_area {
+    background: #fbfbfd;
+}
+
+
+.new_footer_top {
+    padding: 120px 0px 270px;
+    position: relative;
+      overflow-x: hidden;
+}
+.new_footer_area .footer_bottom {
+    padding-top: 5px;
+    padding-bottom: 50px;
+}
+.footer_bottom {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #7f88a6;
+    padding: 27px 0px;
+}
+.new_footer_top .company_widget p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    color: #6a7695;
+    margin-bottom: 20px;
+}
+.new_footer_top .company_widget .f_subscribe_two .btn_get {
+    border-width: 1px;
+    margin-top: 20px;
+}
+.btn_get_two:hover {
+    background: transparent;
+    color: #5e2ced;
+}
+.btn_get:hover {
+    color: #fff;
+    background: #6754e2;
+    border-color: #6754e2;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+.new_footer_top .f_widget.about-widget .f_list li a:hover {
+    color: #5e2ced;
+}
+.new_footer_top .f_widget.about-widget .f_list li {
+    margin-bottom: 11px;
+}
+.f_widget.about-widget .f_list li:last-child {
+    margin-bottom: 0px;
+}
+.f_widget.about-widget .f_list li {
+    margin-bottom: 15px;
+}
+.f_widget.about-widget .f_list {
+    margin-bottom: 0px;
+}
+.new_footer_top .f_social_icon a {
+    width: 44px;
+    height: 44px;
+    line-height: 43px;
+    background: transparent;
+    border: 1px solid #e2e2eb;
+    font-size: 24px;
+}
+.f_social_icon a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 45px;
+    color: #858da8;
+    display: inline-block;
+    background: #ebeef5;
+    text-align: center;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.ti-facebook:before {
+    content: "\e741";
+}
+.ti-twitter-alt:before {
+    content: "\e74b";
+}
+.ti-vimeo-alt:before {
+    content: "\e74a";
+}
+.ti-pinterest:before {
+    content: "\e731";
+}
+
+.btn_get_two {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #5e2ced;
+    border-color: #5e2ced;
+    color: #fff;
+}
+
+.btn_get_two:hover {
+    background: transparent;
+    color: #5e2ced;
+}
+
+.new_footer_top .f_social_icon a:hover {
+    background: #5e2ced;
+    border-color: #5e2ced;
+  color:white;
+}
+.new_footer_top .f_social_icon a + a {
+    margin-left: 4px;
+}
+.new_footer_top .f-title {
+    margin-bottom: 30px;
+    color: #263b5e;
+}
+.f_600 {
+    font-weight: 600;
+}
+.f_size_18 {
+    font-size: 18px;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #4b505e;
+}
+.new_footer_top .f_widget.about-widget .f_list li a {
+    color: #6a7695;
+}
+
+
+.new_footer_top .footer_bg {
+    position: absolute;
+    bottom: 0;
+    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigB8iI5tb8WSVBuVUGc9UjjB8O0708X7Fdic_4O1LT4CmLHoiwhanLXiRhe82yw0tR7LgACQ2IhZaTY0hhmGi0gYp_Ynb49CVzfmXtYHUVKgXXpWvJ_oYT8cB4vzsnJLe3iCwuzj-w6PeYq_JaHmy_CoGoa6nw0FBo-2xLdOPvsLTh_fmYH2xhkaZ-OGQ/s16000/footer_bg.png") no-repeat scroll center 0;
+    width: 100%;
+    height: 266px;
+}
+
+.new_footer_top .footer_bg .footer_bg_one {
+    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia0PYPxwT5ifToyP3SNZeQWfJEWrUENYA5IXM6sN5vLwAKvaJS1pQVu8mOFFUa_ET4JuHNTFAxKURFerJYHDUWXLXl1vDofYXuij45JZelYOjEFoCOn7E6Vxu0fwV7ACPzArcno1rYuVxGB7JY6G7__e4_KZW4lTYIaHSLVaVLzklZBLZnQw047oq5-Q/s16000/volks.gif") no-repeat center center;
+    width: 330px;
+    height: 105px;
+  background-size:100%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    -webkit-animation: myfirst 22s linear infinite;
+    animation: myfirst 22s linear infinite;
+}
+
+.new_footer_top .footer_bg .footer_bg_two {
+    background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif") no-repeat center center;
+    width: 88px;
+    height: 100px;
+  background-size:100%;
+    bottom: 0;
+    left: 38%;
+    position: absolute;
+    -webkit-animation: myfirst 30s linear infinite;
+    animation: myfirst 30s linear infinite;
+}
+
+
+
+@-moz-keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes myfirst {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+</style>
+
+<style>
+  .circle {
+  padding: 13px 20px;
+  border-radius: 50%;
+  /* border width below makes connecting segments and 
+  borders unified, appearing to be part of one another */
+  border:3px solid #afbada;
+  background-color: #213f99;
+  color: #fff;
+  /* remember that whatever "border:(x)width" property is 
+  added to the .circle, the max height below also has to
+  have this same amount added to it for it to appear
+  perfectly round :*/
+  max-height: 60px;
+  z-index: 2;
+}
+
+.how-it-works.row .col-2 {
+  align-self: stretch;
+}
+.how-it-works.row .col-2::after {
+  content: "";
+  position: absolute;
+  border-left: 3px solid #afbada;
+  z-index: 1;
+}
+.how-it-works.row .col-2.bottom::after {
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}
+.how-it-works.row .col-2.full::after {
+  height: 100%;
+  left: calc(50% - 3px);
+}
+.how-it-works.row .col-2.top::after {
+  height: 50%;
+  left: 50%;
+  top: 0;
+}
+
+
+.timeline div {
+  padding: 0;
+  height: 40px;
+}
+.timeline hr {
+  border-top: 3px solid #ED8D8D;
+  margin: 0;
+  top: 17px;
+  position: relative;
+}
+.timeline .col-2 {
+  display: flex;
+  overflow: hidden;
+}
+.timeline .corner {
+  border: 3px solid #ED8D8D;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.timeline .top-right {
+  left: 50%;
+  top: -50%;
+}
+.timeline .left-bottom {
+  left: -50%;
+  top: calc(50% - 3px);
+}
+.timeline .top-left {
+  left: -50%;
+  top: -50%;
+}
+.timeline .right-bottom {
+  left: 50%;
+  top: calc(50% - 3px);
+}
+</style>
+
+<style>
+        .section {
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s;
+            max-width: 800px;
+        }
+
+        .section h2 {
+            color: #4285f4;
+            border-bottom: 2px solid #4285f4;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: #ffd54f;
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            width: 45%;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+               .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .button {
+            background: #4285f4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+        }
+
+        .button:hover {
+            background: #357ae8;
+        } 
+             .benefits ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            background: #c5e1a5;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .benefits li i {
+            margin-right: 10px; /* Space between icon and text */
+            color: #4285f4; /* Color of icons */
+         
+</style>
+    <style>
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 60vh; /* Tinggi slider responsif */
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .texttt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) perspective(1000px) rotateY(15deg);
+            font-size: 9vw; /* Ukuran font responsif */
+            color: #de8d0c;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.5);
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+    </style>
+<!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://i.ibb.co.com/MCxKRVw/Picsart-24-09-29-12-53-06-314.jpg">Depwebstudio.com</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://www.depwebstudio.com/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a
+   class="nav-link"
+            href="https://www.depwebstudio.com/tentang-kami">About
+            Me</a>
+          </li>
+          <a class="nav-link" href="https://www.depwebstudio.com/contak-dan-informasi">Kontak dan Alamat</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Daftar Layanan Kami</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="https://www.depwebstudio.com/cyber-security">Cyber Security</a></li>
+              <li><a class="dropdown-item" href="https://www.depwebstudio.com/menu-website">website Profesional</a></li>
+              <li><a class="dropdown-item" href="https://www.depwebstudio.com/desain-aplikasi">Aplikasi</a></li>
+              <li><a class="dropdown-item" href="https://www.depwebstudio.com/adwords">Adwords</a></li>
+               <li><a class="dropdown-item" href="https://www.depwebstudio.com/platform-audite">Audite</a></li>
+              <li><a class="dropdown-item" href="https://www.depwebstudio.com/seo">SEO</a></li> 
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Close</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://wa.me/+6282328597909">Customer service</a>
+          </li>
+          <a class="nav-link" href="depwebstudio@gmail.com">Emaill</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Sign Up
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign up to Ikea's lab</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+
+                  <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input class="form-control">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+
+                  <label for="inputPassword5" class="form-label">Password</label>
+                  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                  <div
+                  id="passwordHelpBlock"
+                  class="form-text">
+                    Your
+                    password
+                    must
+                    be
+                    8-20
+                    characters
+                    long,
+                    contain
+                    letters
+                    and
+                    numbers,
+                    and
+                    must
+                    not
+                    contain
+                    spaces,
+                    special
+                    characters,
+                    or
+                    emoji.
+                  </div>
+                </form>
+                <button
+                type="submit"
+                class="btn
+                btn-primary">Sign
+                up</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Login
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Login to your account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text"></div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       </div> </div> </nav>
+ </nav>
+ <hr>
+ <div class="slider">
+    <div class="slide">
+        <img src="https://i.ibb.co.com/NVQx4Bc/f00058cd4e9c0da99750ada018927fbd.jpg" alt="Gambar 1">
+        <div class="texttt">Desain website profesional</div>
+    </div>
+    <div class="slide">
+        <img src="https://i.ibb.co.com/PTVhXJk/437fc4af1d5848298885a98c4387e028.jpg" alt="desain website profesional mulai 300 ribu pertahun">
+        <div class="texttt">S,E,O<br> Search Enggine Optimization</div>
+    </div>
+    <div class="slide">
+        <img src="https://i.ibb.co.com/ChXKbGX/275db4d8438875dcd2e2bfd53db26478.jpg" alt="Gambar 3">
+        <div class="texttt">Lindungi Perangkat Anda dari Serangan Jahat</div>
+    </div>
+    <div class="slide">
+        <img src="https://i.ibb.co.com/HzGgDpv/36f4cb4da8086faa5c03b5612c6e05db.jpg" alt="Gambar 4">
+        <div class="texttt">Promosikan Bisni dan Usaha anda Bersama kami</div>
+    </div>
+    <div class="slide">
+        <img src="https://i.ibb.co.com/SytQq42/d2ab2f3a941112b3244a46928f1706c3.jpg" alt="d2ab2f3a941112b3244a46928f1706c3">
+        <div class="texttt">Desain Aplikasi perusahaan baik skala besar dan kecil</div>
+    </div>
+</div>
+<hr>
+<br><br>
+<br><br>
+ <div class="pembatas"></div>
+        <h1 class="jud" style="text-align:center">DepWeb_ Studio.</h1>
+        <h1 style="text-align:center">Pusat Digiatal Marketing Agency terpercaya<br> dan nomor 1 di indonesia</h1>
+        <br><br>
+        
+        <img src="https://i.ibb.co.com/7zBSVQL/In-Shot-20240527-103318879.jpg" alt="DepWeb Studio: Digital Marketing Agency Terpercaya di Indonesia
+DepWeb Studio adalah digital marketing agency terkemuka yang menawarkan berbagai layanan digital marketing untuk membantu perusahaan Anda beradaptasi dengan kebutuhan pasar saat ini. Kami menyediakan solusi komprehensif mulai dari desain website profesional hingga paket jasa SEO yang dirancang khusus untuk meningkatkan visibilitas online Anda.
+Dengan pengalaman di search engine optimization (SEO), kami memastikan website Anda dioptimalkan untuk mencapai peringkat tertinggi di mesin pencari. Layanan kami juga mencakup pemasaran online yang efektif, strategi pemasaran di media sosial, dan instalasi aplikasi perusahaan yang mendukung produktivitas tim.
+Kami mengedepankan layanan digital marketing terpercaya dengan tim digital marketing profesional yang siap membantu Anda meraih tujuan bisnis. Jika Anda mencari jasa pemasaran digital yang berkualitas, desain website mobile-friendly, dan solusi digital marketing lainnya, DepWeb Studio adalah pilihan yang tepat.
+Bergabunglah bersama kami untuk meningkatkan visibilitas online bisnis Anda dan capai kesuksesan pemasaran yang Anda impikan!" width="100%">
+        <br><br>
+  <div class="bungkus11">
+  
+ <div class="vl">
+   <hr class="gar">
+    <h1 class="acd">DepWeb Studio: Digital Marketing Agency Terpercaya di Indonesia.</h1><br><p>
+DepWeb Studio adalah digital marketing agency terkemuka yang menawarkan berbagai layanan digital marketing untuk membantu perusahaan Anda beradaptasi dengan kebutuhan pasar saat ini.<br>Kami menyediakan solusi komprehensif mulai dari desain website profesional hingga paket jasa SEO yang dirancang khusus untuk meningkatkan visibilitas online Anda.<br>
+
+Dengan pengalaman di search engine optimization (SEO), kami memastikan website Anda dioptimalkan untuk mencapai peringkat tertinggi di mesin pencari. Layanan kami juga mencakup pemasaran online yang efektif, strategi pemasaran di media sosial, dan instalasi aplikasi perusahaan yang mendukung produktivitas tim.<br>
+
+Kami mengedepankan layanan digital marketing terpercaya dengan tim digital marketing profesional yang siap membantu Anda meraih tujuan bisnis. Jika Anda mencari jasa pemasaran digital yang berkualitas, desain website mobile-friendly, dan solusi digital marketing lainnya, DepWeb Studio adalah pilihan yang tepat.<br>
+
+Bergabunglah bersama kami untuk meningkatkan visibilitas online bisnis Anda dan capai kesuksesan pemasaran yang Anda impikan!.</p>
+<hr class="gar">
+</div>
+
+</div>      
+        <div class="pembatas"></div>
+
+
+</div>
+<div class="pembatas"></div>
+</main> <br> <br> <br> <br><br>    
+<hr>
+<h3 style="text-align:center" data-aos="flip-right">Jika Anda Baru Menemukan Laman Kami,Silahkan Pelajari Dasar Layanan Kami di Bawah</h3>
+<br> <br><br>    
+ <section class="section">
+        <div class="container">
+            <h3 class="title has-text-centered">Dasar dasar Layanan kami</h3>
+
+            <div class="buttons has-addons is-centered">
+                <button id="toggleAll" class="button is-primary toggle-all">Open All</button>
+            </div>
+
+            <div class="accordion-container">
+                <!-- Desain Website -->
+                <div class="accordion">
+                    <span><i class="fas fa-desktop"></i> Desain Website</span>
+                </div>
+                <div class="panel">
+                    <p>Website adalah platform digital yang menyediakan informasi dan layanan melalui internet. Kami menawarkan desain yang responsif dan user-friendly, memastikan pengalaman pengguna yang optimal di semua perangkat.</p>
+                    <p><strong>Fungsi:</strong> Membantu Anda membangun citra merek yang kuat, meningkatkan interaksi pelanggan, dan mendorong konversi.</p>
+                    <a href="https://example.com/desain-website" class="button is-link is-light more-info">Learn More</a>
+                </div>
+
+                <!-- SEO -->
+                <div class="accordion">
+                    <span><i class="fas fa-search"></i> SEO</span>
+                </div>
+                <div class="panel">
+                    <p>SEO (Search Engine Optimization) adalah praktik optimisasi untuk meningkatkan visibilitas website di mesin pencari. Kami menganalisis kata kunci, konten, dan struktur website Anda untuk menjangkau audiens yang lebih luas.</p>
+                    <p><strong>Fungsi:</strong> Meningkatkan trafik organik dan membantu bisnis Anda lebih mudah ditemukan oleh pelanggan.</p>
+                    <a href="https://example.com/seo" class="button is-link is-light more-info">Learn More</a>
+                </div>
+
+                <!-- Aplikasi/Software -->
+                <div class="accordion">
+                    <span><i class="fas fa-code"></i> Aplikasi/Software</span>
+                </div>
+                <div class="panel">
+                    <p>Aplikasi perusahaan adalah solusi perangkat lunak yang dirancang untuk merampingkan proses bisnis. Kami mengembangkan aplikasi sesuai kebutuhan spesifik bisnis Anda, dari desktop hingga mobile.</p>
+                    <p><strong>Fungsi:</strong> Meningkatkan efisiensi operasional dan produktivitas karyawan.</p>
+                    <a href="https://example.com/aplikasi" class="button is-link is-light more-info">Learn More</a>
+                </div>
+
+                <!-- Addwords -->
+                <div class="accordion">
+                    <span><i class="fas fa-bullhorn"></i> Addwords</span>
+                </div>
+                <div class="panel">
+                    <p>Addwords adalah metode pemasaran untuk mempromosikan produk atau jasa melalui iklan berbayar. Kami membantu merencanakan dan menjalankan kampanye iklan yang efektif di berbagai platform.</p>
+                    <p><strong>Fungsi:</strong> Meningkatkan jangkauan pasar dan konversi pelanggan.</p>
+                    <a href="https://example.com/addwords" class="button is-link is-light more-info">Learn More</a>
+                </div>
+
+                <!-- Cyber Security -->
+                <div class="accordion">
+                    <span><i class="fas fa-shield-alt"></i> Cyber Security</span>
+                </div>
+                <div class="panel">
+                    <p>Keamanan siber melindungi sistem komputer, jaringan, dan data dari serangan. Kami menawarkan solusi keamanan untuk melindungi bisnis Anda dari ancaman siber.</p>
+                    <p><strong>Fungsi:</strong> Mengurangi risiko dan memastikan kepatuhan terhadap regulasi keamanan data.</p>
+                    <a href="https://example.com/cyber-security" class="button is-link is-light more-info">Learn More</a>
+                </div>
+
+                <!-- Auditor -->
+                <div class="accordion">
+                    <span><i class="fas fa-clipboard-check"></i> Auditor</span>
+                </div>
+                <div class="panel">
+                    <p>Jasa audit meliputi pemeriksaan laporan keuangan dan sistem manajemen. Kami menyediakan layanan audit internal dan eksternal untuk menjaga transparansi dan akuntabilitas.</p>
+                    <p><strong>Fungsi:</strong> Meningkatkan efisiensi operasional dan mitigasi risiko dalam perusahaan.</p>
+                    <a href="https://example.com/auditor" class="button is-link is-light more-info">Learn More</a>
+                </div>
+
+                <!-- Afiliasi -->
+                <div class="accordion">
+                    <span><i class="fas fa-handshake"></i> Afiliasi</span>
+                </div>
+                <div class="panel">
+                    <p>Afiliasi adalah bentuk kerjasama di mana pihak afiliasi mendapatkan komisi dari penjualan atau tindakan. Kami membantu merancang program afiliasi yang efektif.</p>
+                    <p><strong>Fungsi:</strong> Meningkatkan jangkauan pasar dan mendatangkan pelanggan baru dengan biaya yang efisien.</p>
+                    <a href="https://example.com/afiliasi" class="button is-link is-light more-info">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <br> <br> <br> <br><br>    
+<h4 class="ibo" style=" text-align:center">📎 raih sukes dan jangkau minat konsultasi anda dengan salah satu layanan kami.<br>segera hubungi atau konsultasikan keperluan anda bersama kami.</h4><hr>
+  <div class="pembatas"></div>
+    <div class="pembatas"></div>
+<h1 class="ibo" style="text-align:center">Berikut Daftar Layanan Kami<hr></h1> <br> <br> <br> <br>
+ 
+ <Section class="ibo">
+<div class="blog-card" data-aos="fade-left">
+    <div class="meta">
+      <div class="photo" style="background-image:"><img src="https://i.ibb.co.com/Wsb08xS/5c044dfa3ddd5ef809f1c8e473d9bf35.jpg"  width="100%" height="100%"></div>
+      <ul class="details">
+        <li class="author"><a>🧑‍🧒‍🧒 3706 Order</a></li>
+        <li class="tags">
+     
+        </li>
+      </ul>
+    </div>
+    <div class="description" data-aos="zoom-out">
+      <h1>Desain website profesional</h1>
+      <h2>Mulai Dari Rp.400.000</h2>
+      <p>Desain website profesional mulai dari 400 Ribu/pertahun.<br>•gratis hosting dan Domain<br>•revisi selama proses pembuatan<br>•desain mobile frendly </p>
+         <div class="card--rating-wrapper">
+           <div class="card--rating-stars--wrapper">
+             <div class="card--rating-star filled">☆</div>
+             <div class="card--rating-star filled">☆</div>
+             <div class="card--rating-star filled">☆</div>
+             <div class="card--rating-star filled">☆</div>
+             <div class="card--rating-star">☆</div>
+           </div>
+           <span class="card--rating-count">3725 Start</span>
+         </div><a href="https://www.depwebstudio.com/menu-website" class="btn btn-warning">Order Now...!!!</a> </div>
+         </div>
+         
+         
+  <div class="blog-card alt" data-aos="fade-right">
+    <div class="meta">
+      <div class="photo" style="background-image:"><img src="https://i.ibb.co.com/zVWGfNB/2f4761fdf75b7494a9be54638bb5dc52.jpg" width="100%" height="100%"></div>
+      <ul class="details">
+        <li class="author"><a href="#">🧑‍🧒‍🧒 2580 Order</a></li>
+        
+        <li class="tags">
+         
+        </li>
+      </ul>
+    </div>
+    <div class="description" data-aos="zoom-in">
+      <h1>Search Enggine Optimization</h1>
+      <h2>Mulai Dari 700.000</h2>
+      <p>Paket Jasa SEO Murah Profesional dari SEO Specialist untuk Optimasi Website Berada di Posisi Atas Search Engine. Jaminan Harga Terbaik. Dengan Teknik On Page..</p>
+            <div class="card--rating-wrapper">
+              <div class="card--rating-stars--wrapper">
+                <div class="card--rating-star filled">☆</div>
+                <div class="card--rating-star filled">☆</div>
+                <div class="card--rating-star filled">☆</div>
+                <div class="card--rating-star filled">☆</div>
+                <div class="card--rating-star">☆</div>
+              </div>
+              <span class="card--rating-count">1309 Start</span>
+            </div><a href="https://www.depwebstudio.com/seo" class="btn btn-warning">Order Now...!!!</a> </div></div>
+            
+            
+  <div class="blog-card" data-aos="fade-down-left">
+    <div class="meta">
+      <div class="photo" style="background-image:"><img src="https://i.ibb.co.com/mThpfrF/41230590a0ff35dd78f8856bd993affb.jpg" width="100%" height="100%"></div>
+      <ul class="details">
+        <li class="author"><a href="#">🧑‍🧒‍🧒 614 Order</a></li>
+        
+        <li class="tags">
+        
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Instalasi Aplikasi/Software</h1>
+      <h2>hanya 1.200 Rupiah /KB</h2>
+      <p>Aplikasi perusahaan dapat membantu meningkatkan produktivitas, efisiensi, dan kolaborasi antara tim. memungkinkan akses mudah ke informasi, memfasilitasi komunikasi internal, memantau kinerja bisnis, mengelola inventaris, dan meningkatkan pengalaman pelanggan..</p>
+      <div class="card--rating-wrapper">
+        <div class="card--rating-stars--wrapper">
+          <div class="card--rating-star filled">☆</div>
+          <div class="card--rating-star filled">☆</div>
+          <div class="card--rating-star filled">☆</div>
+          <div class="card--rating-star filled">☆</div>
+          <div class="card--rating-star">☆</div>
+        </div>
+        <span class="card--rating-count">160 Start</span>
+      </div>
+       <a href="https://www.depwebstudio.com/desain-aplikasi" class="btn btn-warning">Order Now...!!!</a></div>
+  </div>
+<div class="blog-card alt" data-aos="fade-down-right">
+    <div class="meta">
+      <div class="photo" style="background-image:"><img src="https://i.ibb.co.com/23QQ9xj/7e117b1dac52da1b9622766bf85142e1.jpg" width="100% height="100%"></div>
+      <ul class="details">
+        <li class="author"><a href="#">🧑‍🧒‍🧒 2290 Order</a></li>
+      </div>
+    <div class="description">
+      <h1>Addword </h1>
+      <h2>Mulai dari Rp.500.000</h2>
+      <p>Raih sukses dangan mempromosikan bisnis dan usaha anda bersama kami,.</p>
+      <div class="card--rating-wrapper">
+        <div class="card--rating-stars--wrapper">
+          <div class="card--rating-star filled">☆</div>
+          <div class="card--rating-star filled">☆</div>
+          <div class="card--rating-star filled">☆</div>
+          <div class="card--rating-star filled">☆</div>
+          <div class="card--rating-star">☆</div>
+        </div>
+        <span class="card--rating-count">2425 Star</span></div>
+          <a href="https://www.depwebstudio.com/adwords" class="btn btn-warning">Order Now...!!!</a> 
+      </div>
+  </div>
+   <div class="blog-card" data-aos="zoom-out">
+      <div class="meta">
+        <div class="photo" style="background-image:"><img src="https://i.ibb.co.com/Wn80KXP/b9b4a61db4f7fcbee0825e84dff8ae07.jpg" width="100%" height="100%"></div>
+        <ul class="details">
+          <li class="author"><a href="#">🧑‍🧒‍🧒 582 Order</a></li>
+          <li class="tags"> </li>
+        </ul>
+      </div>
+      <div class="description" data-aos="zoom-in">
+        <h1>Cyber Security</h1>
+        <h2>konsultasikan</h2>
+        <p> lindungi komputer, server, perangkat seluler, sistem elektronik, jaringan, dan data dari serangan jahat atau pencurian data.</p>
+        <div class="card--rating-wrapper">
+          <div class="card--rating-stars--wrapper">
+            <div class="card--rating-star filled">☆</div>
+            <div class="card--rating-star filled">☆</div>
+            <div class="card--rating-star filled">☆</div>
+            <div class="card--rating-star filled">☆</div>
+            <div class="card--rating-star">☆</div>
+          </div>
+          <span class="card--rating-count">2850 Start</span>
+        </div>
+        <a href="https://www.depwebstudio.com/cyber-security" class="btn btn-warning">Order Now...!!!</a></div>
+    </div>
+    <div class="blog-card alt" data-aos="fade-right">
+    <div class="meta">
+      <div class="photo" style="background-image:"><img src="https://i.ibb.co.com/s10rZ05/3de78993692f7e558c221c1e004c1088.jpg" width="100%" height="100%"></div>
+      <ul class="details">
+        <li class="author"><a href="#">🧑‍🧒‍🧒 2580 Order</a></li><li class="tags">
+         </li>
+      </ul>
+    </div>
+    <div class="description" data-aos="zoom-in">
+      <h1>Audite</h1>
+      <h2>Mulai Dari 26.000.000</h2>
+      <p>layanan yang dilakukan oleh seorang auditor atau tim auditor untuk memeriksa dan mengevaluasi laporan keuangan, kepatuhan operasional, atau sistem manajemen suatu organisasi, perusahaan, atau institusi</p>
+            <div class="card--rating-wrapper">
+              <div class="card--rating-stars--wrapper">
+                <div class="card--rating-star filled">☆</div>
+                <div class="card--rating-star filled">☆</div>
+                <div class="card--rating-star filled">☆</div>
+                <div class="card--rating-star filled">☆</div>
+                <div class="card--rating-star">☆</div>
+              </div>
+              <span class="card--rating-count">1309 Start</span>
+            </div><a href="https://www.depwebstudio.com/platform-audite" class="btn btn-warning">Order Now...!!!</a> </div>
+            </div>
+                  <div class="blog-card" data-aos="fade-left">
+    <div class="meta">
+      <div class="photo" style="background-image:"><img src="https://i.ibb.co.com/d2XBD5F/bef31f50ca0fe414ece30c246dc022a1.jpg"  width="100%" height="100%"></div>
+      <ul class="details">
+        <li class="author"><a>🧑‍🧒‍🧒 3706 Order</a></li>
+        <li class="tags">
+      </li>
+      </ul>
+    </div>
+    <div class="description" data-aos="zoom-out">
+      <h1>Affiliasi</h1>
+      <h2>"0 Rupiah" tanpa modal awal</h2>
+      <p>kerja sama antara individu atau perusahaan dengan perusahaan lain di mana pihak afiliasi (affiliate) mempromosikan produk atau layanan perusahaan tertentu dan mendapatkan komisi atas penjualan atau tindakan spesifik yang dihasilkan melalui referensinya. </p>
+         <div class="card--rating-wrapper">
+           <div class="card--rating-stars--wrapper">
+             <div class="card--rating-star filled">☆</div>
+             <div class="card--rating-star filled">☆</div>
+             <div class="card--rating-star filled">☆</div>
+             <div class="card--rating-star filled">☆</div>
+             <div class="card--rating-star">☆</div>
+           </div>
+           <span class="card--rating-count">3725 Start</span>
+         </div><a href="https://www.depwebstudio.com/afiliasi" class="btn btn-warning">Order Now...!!!</a> </div>
+         </div>
+  </Section>
+  <br> <br> <br> <br> <br> 
+  <section class="boyy">
+    <div class="ner">
+        <h3>Cara Order</h3>
+        <div class="tim">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h2><i class="fas fa-list"></i> Pilih Layanan</h2>
+                    <p>Pilih layanan yang Anda butuhkan dari daftar layanan kami.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h2><i class="fas fa-edit"></i> Isi Formulir</h2>
+                    <p>Isi formulir pemesanan dengan informasi yang diperlukan.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h2><i class="fas fa-check-circle"></i> Konfirmasi</h2>
+                    <p>Kami akan mengonfirmasi pesanan Anda melalui WhatsApp atau email.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h2><i class="fas fa-credit-card"></i> Pembayaran</h2>
+                    <p>Lakukan pembayaran sesuai instruksi yang kami berikan.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h2><i class="fas fa-hourglass-half"></i> Tunggu Proses</h2>
+                    <p>Kami akan memproses pesanan Anda dan memberi tahu Anda setelah selesai.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h2>Keunggulan Layanan Kami</h2>
+            <ul>
+                <li><i class="fas fa-clock"></i> <strong>Waktu Cepat:</strong> Pemrosesan cepat untuk semua pesanan dan ramah </li>
+                <li><i class="fas fa-trophy"></i> <strong>Kualitas Terbaik:</strong> Layanan yang memuaskan dan berkualitas tinggi.</li>
+                <li><i class="fas fa-headset"></i> <strong>Dukungan Pelanggan:</strong> Bantuan 24/7 untuk semua pertanyaan dan masalah.</li>
+            </ul>
+        </div>
+    </div>
+    </section>  
+ <br> <br> <br> <br> <br> <br> <br> <br>
+ <div class="container my-5">
+        <header>
+            <h1>8 Alasan Memilih Digital Marketing</h1>
+        </header>
+        <section class="row">
+            <div class="col-md-6 mb-4">
+                <div class="reason p-4">
+                    <i class="fas fa-globe"></i>
+                    <h2>1. Jangkauan Global</h2>
+                    <p>Digital marketing memungkinkan bisnis untuk menjangkau audiens secara global tanpa batasan geografis.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="reason p-4">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h2>2. Biaya yang Efisien</h2>
+                    <p>Seringkali lebih hemat biaya dibandingkan dengan pemasaran tradisional.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="reason p-4">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>3. Analisis dan Pelacakan</h2>
+                    <p>Digital marketing menawarkan alat analitik untuk memantau kinerja kampanye secara real-time.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="reason p-4">
+                    <i class="fas fa-bullseye"></i>
+                    <h2>4. Target Audiens yang Spesifik</h2>
+                    <p>Anda dapat menargetkan audiens yang spesifik berdasarkan demografi dan minat.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="reason p-4">
+                    <i class="fas fa-comments"></i>
+                    <h2>5. Interaksi dan Keterlibatan</h2>
+                    <p>Digital marketing memungkinkan interaksi langsung dengan audiens melalui media sosial dan konten interaktif.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="reason p-4">
+                    <i class="fas fa-th"></i>
+                    <h2>6. Konten yang Beragam</h2>
+                    <p>Gunakan berbagai format konten seperti video, gambar, dan artikel untuk menarik perhatian audiens.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="reason p-4">
+                    <i class="fas fa-sync-alt"></i>
+                    <h2>7. Fleksibilitas dan Adaptasi</h2>
+                    <p>Strategi digital marketing dapat disesuaikan dan diubah sesuai dengan umpan balik yang diperoleh.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="reason p-4">
+                    <i class="fas fa-star"></i>
+                    <h2>8. Membangun Merek yang Kuat</h2>
+                    <p> membantu membangun citra merek yang konsisten dan meningkatkan kepercayaan pelanggan.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+ <br> <br> <br> <br>
+<div class="">
+  <div class="container">
+    <h1 style="text-align:center">Tentang Team Kami</h1><br><br><br>
+    <!--first section-->
+    <div class="row align-items-center how-it-works d-flex">
+      <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">🚀</div>
+      </div>
+      <div class="col-6">
+        <h5>DepWebStudio</h5>
+        <p data-aos="fade-down-left">mempunyai beberapa team yang berpengalaman,dari berbagai strategi untuk mempromosikan merek atau produk secara online, termasuk SEO, PPC, media sosial, konten, dan lainnya. Tim kami terdiri dari spesialis dalam berbagai area seperti SEO, SEM, media sosial, konten dan analitik</p>
+      </div>
+    </div>
+    <!--path between 1-2-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner top-right"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner left-bottom"></div>
+      </div>
+    </div>
+    <!--second section-->
+    <div class="row align-items-center justify-content-end how-it-works d-flex">
+      <div class="col-6 text-right">
+        <h5>Devloper Berpengalaman.</h5>
+        <p data-aos="slide-right">berpengalaman dalam bidang pembuatan aplikasi baik skala besar/skala kecil untuk membantu meningkatkan produktivitas, efisiensi, dan kolaborasi antara tim dan perusahaan. Memberikan akses mudah ke informasi, memfasilitasi komunikasi internal, memantau kinerja bisnis, mengelola inventaris, dan meningkatkan pengalaman pelanggan. Dengan fitur-fitur seperti analisis data dan integrasi dengan sistem lainnya.</p>
+      </div>
+      <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">📱
+</div>
+      </div>
+    </div>
+    <!--path between 2-3-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner right-bottom"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner top-left"></div>
+      </div>
+    </div>
+    <!--third section-->
+    <div class="row align-items-center how-it-works d-flex">
+      <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">🛡️</div>
+      </div>
+      <div class="col-6">
+        <h5>Cyber Security</h5>
+        <p alt=" Cyber Security
+" data-aos="fade-up-left">Kami merupakan prakstisi berpengalman dalam penanggulangan serangan cyber,dan ahli dalam pengamanan serta penetrasi jaringan.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br> <br>
+<section class="boor">
+    <h1 class="foory"><i class="fab fa-whatsapp"></i><br>Bagikan<br>Pengalaman<br>Anda</h1>
+    <div class="comment-form container">
+        <div class="header">Berikan Komentar Anda</div>
+        <h1>Tinggalkan Bintang</h1>
+        <div class="stars" id="stars">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+        <p class="depp">1.085.739 Rating</p>
+        <input type="hidden" id="rating" value="0">
+        <input type="text" id="name" placeholder="Nama" required>
+        <input type="text" id="phone" placeholder="Nomor Telepon (+62)" required>
+        <textarea id="comment" placeholder="Komentar" required></textarea>
+        <button id="submit-comment"><i class="fas fa-paper-plane"></i> Kirim Komentar</button>
+    </div>
+
+<div id="recent-comments">
+    <div class="header">Komentar Terbaru</div>
+    <div id="comments"></div>
+</div>
+
+<div class="old-comments container" id="old-comments">
+    <div class="header">Komentar Lama</div>
+    <div id="all-comments"></div>
+</div>
+
+<div class="oldest-comments container" id="oldest-comments">
+    <div class="header">Komentar Terlama</div>
+    <div id="oldest-comments-list"></div>
+</div>
+
+<!-- Tombol untuk balas komentar via WhatsApp -->
+<button class="toggle-old-comments" id="toggle-old-comments"><i class="fas fa-chevron-down"></i> Tampilkan Komentar Lama</button>
+</section>
+  <br> <br><br>    <br> <br><br>    
+  
+<footer class="new_footer_area bg_color">
+            <div class="new_footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                                <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+                                
+                                <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                                    <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                                    <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                                    <p class="mchimp-errmessage" style="display: none;"></p>
+                                    <p class="mchimp-sucmessage" style="display: none;"></p>
+                                </form>
+                            </div>
+                        </div>
+                          <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                                <br>
+                                <h3>Daftar Layanan</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="https://www.depwebstudio.com/menu-website">Desain Website</a></li>
+                                    <li><a href="https://www.depwebstudio.com/desain-aplikasi">SoftWare/Aplikasi</a></li>
+                                    <li><a href="https://www.depwebstudio.com/seo">S,E,O</a></li>
+                                    <li><a href="https://www.depwebstudio.com/cyber-security">Cyber Security</a></li>
+                                    <li><a href="https://www.depwebstudio.com/adwords">AddWord</a></li>
+                                  <li><a href="https://www.depwebstudio.com/platform-audite">Audite</a></li>    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;"><br>
+                                <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="#">Emaill</a></li>
+                                    <li><a href="https://wa.me/+6282328597909">Kontak</a></li>
+                                    <li><a href="#">Alamat</a></li>
+                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                                <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                                <div class="f_social_icon">
+                                    <a href="#" class="fab fa-facebook"></a>
+                                   
+                                    <a href="#" class="fab fa-linkedin"></a>
+                                    <a href="#" class="fab fa-pinterest"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bg">
+                    <div class="footer_bg_one"></div>
+                    <div class="footer_bg_two"></div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-sm-7">
+                            <p class="mb-0 f_400">© DepWebStudio.inc.. 2020 All rights reserved.</p>
+                        </div>
+                        <div class="col-lg-6 col-sm-5 text-right">
+                            <p>Made with: Dep Web Studio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+<script>
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    dots: false,
+    nav: true,
+    mouseDrag: false,
+    autoplay: true,
+    animateOut: 'slideOutUp',
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
+      },
+      1000: {
+        items: 1
+      }
+    }
+  });
+</script>
+  
+<script>
+    const commentsDiv = document.getElementById('comments');
+    const allCommentsDiv = document.getElementById('all-comments');
+    const oldestCommentsDiv = document.getElementById('oldest-comments-list');
+
+    let allComments = [
+        { name: 'Andi', phone: '08210934****', comment: 'Websitenya keren bang! 😊', rating: 5, date: new Date('2024-10-01'), replies: [] },
+        { name: 'Rina', phone: '08211856****', comment: 'Sangat bermanfaat!', rating: 4, date: new Date('2024-09-21'), replies: [] }
+    ];
+
+    let oldestComments = [
+        { name: 'Budi', phone: '08123456****', comment: 'Saya sangat puas dengan layanannya!', rating: 5, date: new Date('2023-12-15'), replies: [] },
+        { name: 'Siti', phone: '08561234****', comment: 'Pengalaman yang luar biasa!', rating: 4, date: new Date('2023-11-10'), replies: [] }
+    ];
+
+    // Tambah komentar baru
+    document.getElementById('submit-comment').addEventListener('click', () => {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const commentText = document.getElementById('comment').value;
+        const rating = document.getElementById('rating').value;
+
+        if (name && phone && commentText) {
+            const newComment = {
+                name,
+                phone: phone.replace(phone.slice(-4), '****'), // Sembunyikan 4 digit terakhir
+                comment: commentText,
+                rating: parseInt(rating),
+                date: new Date(),
+                replies: []
+            };
+
+            allComments.push(newComment);
+            updateComments();
+
+            // Kirim notifikasi ke admin via WhatsApp
+            const waMessage = `Komentar baru dari ${name} (${phone.slice(0, -4)}****):\nKomentar: ${commentText}\nRating: ${rating}`;
+            const waNumber = '6282328597909'; // Nomor admin WhatsApp
+            const waLink = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(waMessage)}`;
+            window.open(waLink, '_blank');
+        } else {
+            alert('Harap lengkapi semua field.');
+        }
+    });
+
+    // Update komentar
+    function updateComments() {
+        commentsDiv.innerHTML = '';
+        const recentComments = allComments.slice(-5);
+        recentComments.forEach(comment => {
+            const commentDiv = createCommentDiv(comment);
+            commentsDiv.appendChild(commentDiv);
+        });
+    }
+
+    // Update komentar terlama
+    function updateOldestComments() {
+        oldestCommentsDiv.innerHTML = '';
+        oldestComments.forEach(comment => {
+            const commentDiv = createCommentDiv(comment);
+            oldestCommentsDiv.appendChild(commentDiv);
+        });
+    }
+
+    // Fungsi untuk membuat elemen komentar
+    function createCommentDiv(comment) {
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        commentDiv.innerHTML = `
+            <div class="comment-header">
+                <span class="comment-user">${comment.name}</span>
+                <span class="comment-date">${comment.date.toLocaleDateString()}</span>
+            </div>
+            <p>${comment.comment}</p>
+            <p><i class="fas fa-star"></i> Rating: ${comment.rating}</p>
+            <button class="reply-button">Balas sebagai admin</button>
+            <div class="reply-form">
+                <input type="text" class="reply-input" placeholder="Tulis balasan...">
+                <button class="reply-submit">Kirim</button>
+            </div>
+        `;
+
+        const replyButton = commentDiv.querySelector('.reply-button');
+        const replyForm = commentDiv.querySelector('.reply-form');
+        const replyInput = commentDiv.querySelector('.reply-input');
+        const replySubmit = commentDiv.querySelector('.reply-submit');
+
+        replyButton.addEventListener('click', () => {
+            replyForm.style.display = 'block';
+        });
+
+        replySubmit.addEventListener('click', () => {
+            const reply = replyInput.value;
+            if (reply) {
+                const waMessage = `Balasan admin untuk komentar dari ${comment.name} (${comment.phone.slice(0, -4)}****):\nKomentar: ${comment.comment}\nBalasan: ${reply}`;
+                const waNumber = '6282328597909'; // Nomor admin WhatsApp
+                const waLink = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(waMessage)}`;
+                window.open(waLink, '_blank');
+            }
+        });
+
+        return commentDiv;
+    }
+
+    // Tampilkan/sesembunyikan komentar lama
+    document.getElementById('toggle-old-comments').addEventListener('click', () => {
+        const oldCommentsSection = document.getElementById('old-comments');
+        const oldestCommentsSection = document.getElementById('oldest-comments');
+        if (oldCommentsSection.style.display === 'none') {
+            oldCommentsSection.style.display = 'block';
+            oldestCommentsSection.style.display = 'block';
+            document.getElementById('toggle-old-comments').innerHTML = '<i class="fas fa-chevron-up"></i> Sembunyikan Komentar Lama';
+        } else {
+            oldCommentsSection.style.display = 'none';
+            oldestCommentsSection.style.display = 'none';
+            document.getElementById('toggle-old-comments').innerHTML = '<i class="fas fa-chevron-down"></i> Tampilkan Komentar Lama';
+        }
+    });
+
+    // Pemilihan bintang
+    document.querySelectorAll('.star').forEach(star => {
+        star.addEventListener('click', (e) => {
+            document.getElementById('rating').value = e.target.getAttribute('data-value');
+            document.querySelectorAll('.star').forEach(s => s.classList.remove('selected'));
+            e.target.classList.add('selected');
+        });
+    });
+
+    // Load awal komentar
+    updateComments();
+    updateOldestComments();
+</script>
+
+
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? 1 : 0;
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide);
+    setInterval(nextSlide, 2000); // Ganti gambar setiap 3 detik
+</script>
+ <script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script><script  src="./script.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+  })
+   <script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const acc = document.querySelectorAll('.accordion');
+    const toggleAllButton = document.getElementById('toggleAll');
+
+    // Toggle individual accordion
+    acc.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            // Close all other accordions
+            acc.forEach((otherItem, otherIndex) => {
+                if (otherIndex !== index) {
+                    otherItem.classList.remove('active');
+                    const panel = otherItem.nextElementSibling;
+                    panel.style.display = 'none';
+                }
+            });
+
+            // Toggle clicked accordion
+            item.classList.toggle('active');
+            const panel = item.nextElementSibling;
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+    // Toggle all accordions
+    toggleAllButton.addEventListener('click', () => {
+        const allOpen = Array.from(acc).every(item => item.classList.contains('active'));
+        acc.forEach((item, index) => {
+            item.classList.toggle('active', !allOpen);
+            const panel = item.nextElementSibling;
+            panel.style.display = allOpen ? 'none' : 'block';
+        });
+    });
+});
+ </script>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const acc = document.querySelectorAll('.accordion');
+
+            acc.forEach((item) => {
+                item.addEventListener('click', () => {
+                    // Close other accordions
+                    acc.forEach((el) => {
+                        if (el !== item) {
+                            el.classList.remove('active');
+                            el.nextElementSibling.style.display = 'none';
+                        }
+                    });
+
+                    // Toggle the active class on the clicked accordion
+                    item.classList.toggle('active');
+
+                    // Toggle the panel display
+                    const panel = item.nextElementSibling;
+                    if (panel.style.display === 'block') {
+                        panel.style.display = 'none';
+                    } else {
+                        panel.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
+</body>
+<style>
+     
+  .muge{
+    width:40px;
+    border-radius:100px;
+    padding: 1px;
+  }
+  .btn-media{
+     position: fixed;
+      width: 20px;
+      height: auto;
+      top: 630px;
+      right:30px;
+ 
+    .kuss{
+      width: 50px;
+      height: auto;
+      top:10;
+    
+    }
+</style>
+<body>
+      <div class="btn-media">
+           <div class="kuss">
+<a href="https://t.me/ExwebDevloper" target="_blank"><img class="muge"
+src="https://i.ibb.co.com/61XhqWf/In-Shot-20240909-201718797.jpg"
+alt="In-Shot-20240909-201718797" border="0"></a></d>
+  <div class="blink2">  
+<a href="https://www.facebook.com/profile.php?id=61565091615750&mibextid=ZbWKwL" target="_blank">
+<img class="muge"
+src="https://i.ibb.co.com/4dJ7wgq/In-Shot-20240909-201601099.jpg"
+></a></div>
+  <div class="blink3">  
+<a href="https://wa.me/+6282328597909" target="_blank">
+<img class="muge" src="https://i.ibb.co.com/4RVdS1c/In-Shot-20240909-201513365.jpg"></a>
+
+           </div>
+        </div>
+</body>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="digital marketing agency, desain website, SEO, pemasaran digital, keamanan siber, aplikasi perusahaan, marketing online, DepWeb Studio">
+    <title>DepWeb Studio: Digital Marketing Agency Terpercaya di Indonesia</title>
+    <style>
+        .hiden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+  <section class="hiden">
+    <h1>Selamat Datang di DepWeb Studio</h1>
+    <p>Digital Marketing Agency Terpercaya di Indonesia</p>
+    <p>
+        Selamat datang di DepWeb Studio, digital marketing agency terkemuka di Indonesia yang siap membantu Anda mengoptimalkan kehadiran online perusahaan Anda. Dengan pengalaman bertahun-tahun di dunia pemasaran digital, kami memahami dinamika pasar yang terus berubah dan pentingnya memiliki strategi digital yang efektif. Kami berkomitmen untuk memberikan layanan berkualitas tinggi yang disesuaikan dengan kebutuhan spesifik bisnis Anda.
+    </p>
+
+    <h2>Mengapa Memilih DepWeb Studio?</h2>
+    <p>
+        Di DepWeb Studio, kami tidak hanya menawarkan layanan pemasaran digital; kami menawarkan solusi yang komprehensif untuk membantu Anda meraih tujuan bisnis. Tim profesional kami terdiri dari ahli di bidang desain web, SEO, pemasaran digital, dan keamanan siber, yang bekerja sama untuk memberikan hasil maksimal bagi klien kami. Berikut adalah alasan mengapa kami menjadi pilihan tepat untuk perusahaan Anda:
+    </p>
+    <ul>
+        <li><strong>Pendekatan Berorientasi Hasil:</strong> Kami fokus pada hasil yang terukur, memastikan bahwa setiap strategi yang kami terapkan memberikan dampak positif bagi bisnis Anda.</li>
+        <li><strong>Tim Ahli:</strong> Dengan tim yang berpengalaman dan terlatih, kami memiliki pengetahuan mendalam tentang tren pemasaran terbaru dan alat digital yang diperlukan untuk sukses di pasar saat ini.</li>
+        <li><strong>Solusi yang Disesuaikan:</strong> Kami memahami bahwa setiap bisnis adalah unik, sehingga kami merancang solusi yang sesuai dengan kebutuhan dan tujuan spesifik Anda.</li>
+        <li><strong>Dukungan Pelanggan yang Luar Biasa:</strong> Kami percaya bahwa hubungan yang baik dengan klien adalah kunci keberhasilan. Tim dukungan kami siap membantu Anda kapan saja.</li>
+    </ul>
+
+    <h2>Layanan Kami</h2>
+    <h1>
+        Kami menawarkan berbagai layanan yang dirancang untuk membantu bisnis Anda tumbuh dan berkembang di dunia digital. Berikut adalah layanan utama yang kami tawarkan:
+    </h1>
+
+    <h3>1. Desain Website Profesional</h3>
+    <p>
+        Desain website yang menarik dan fungsional adalah langkah pertama dalam membangun kehadiran online yang kuat. Kami menciptakan website yang tidak hanya estetis tetapi juga ramah pengguna dan mobile-friendly. Website yang kami desain mencakup fitur-fitur berikut:
+    </p>
+    <ul>
+        <li><strong>Antarmuka yang Responsif:</strong> Memastikan tampilan yang optimal di semua perangkat, termasuk desktop dan ponsel.</li>
+        <li><strong>Navigasi yang Mudah:</strong> Membantu pengunjung menemukan informasi yang mereka butuhkan dengan cepat dan efisien.</li>
+        <li><strong>Optimasi Kecepatan:</strong> Website yang cepat mempengaruhi pengalaman pengguna dan peringkat SEO.</li>
+    </ul>
+
+    <h3>Manfaat Website:</h3>
+    <ul>
+        <li>Akses Global: Dengan website, bisnis Anda dapat diakses oleh audiens di seluruh dunia, meningkatkan peluang pelanggan baru.</li>
+        <li>Biaya Efisien: Pemasaran digital sering kali lebih terjangkau daripada metode pemasaran tradisional.</li>
+        <li>Analisis Data: Alat analitik membantu Anda melacak kinerja kampanye dan mengoptimalkan strategi berdasarkan data.</li>
+    </ul>
+
+    <h3>2. Search Engine Optimization (SEO)</h3>
+    <p>
+        SEO adalah praktik penting untuk meningkatkan visibilitas dan peringkat website Anda di mesin pencari seperti Google. Tim kami menggunakan teknik SEO terkini untuk memastikan bahwa website Anda muncul di halaman pertama hasil pencarian. Kami menawarkan:
+    </p>
+    <ul>
+        <li><strong>Audit SEO Lengkap:</strong> Menilai faktor-faktor on-page dan off-page yang mempengaruhi peringkat website Anda.</li>
+        <li><strong>Pengoptimalan Konten:</strong> Membantu menciptakan konten yang relevan dan menarik untuk audiens Anda.</li>
+        <li><strong>Strategi Link Building:</strong> Membangun otoritas domain Anda melalui tautan berkualitas tinggi.</li>
+    </ul>
+
+    <h3>Manfaat SEO:</h3>
+    <ul>
+        <li>Meningkatkan traffic organik ke website Anda.</li>
+        <li>Meningkatkan kesadaran merek dan kredibilitas di pasar.</li>
+        <li>Mengurangi biaya perolehan pelanggan dalam jangka panjang.</li>
+    </ul>
+
+    <h3>3. Desain Aplikasi Perusahaan</h3>
+    <p>
+        Kami juga menyediakan layanan desain aplikasi perusahaan skala besar yang dirancang untuk meningkatkan efisiensi dan produktivitas. Aplikasi kami menawarkan berbagai fitur:
+    </p>
+    <ul>
+        <li><strong>Integrasi Lintas Departemen:</strong> Memfasilitasi kolaborasi antara tim yang berbeda.</li>
+        <li><strong>Otomatisasi Proses:</strong> Mengurangi kebutuhan akan tenaga manusia dalam tugas rutin, meningkatkan efisiensi kerja.</li>
+        <li><strong>Keamanan Data Tinggi:</strong> Menjamin bahwa data perusahaan Anda aman dari ancaman eksternal.</li>
+    </ul>
+
+    <h3>4. Digital Marketing</h3>
+    <p>
+        Digital marketing adalah strategi yang sangat penting di era modern ini. Kami membantu perusahaan Anda menjangkau konsumen melalui berbagai saluran digital, termasuk:
+    </p>
+    <ul>
+        <li><strong>Media Sosial:</strong> Strategi pemasaran yang efektif di platform seperti Facebook, Instagram, dan LinkedIn.</li>
+        <li><strong>Pemasaran Email:</strong> Kampanye yang dirancang untuk meningkatkan konversi dan mempertahankan hubungan dengan pelanggan.</li>
+        <li><strong>Iklan Berbayar:</strong> Pengelolaan kampanye iklan berbayar yang ditargetkan untuk hasil maksimal.</li>
+    </ul>
+
+    <h3>5. Keamanan Siber</h3>
+    <p>
+        Keamanan siber adalah aspek penting yang tidak boleh diabaikan oleh perusahaan manapun. Layanan kami meliputi:
+    </p>
+    <ul>
+        <li><strong>Keamanan Jaringan:</strong> Melindungi jaringan komputer dari penyusup dan serangan malware.</li>
+        <li><strong>Keamanan Aplikasi:</strong> Menjamin aplikasi Anda bebas dari ancaman dengan pengujian dan pengawasan rutin.</li>
+        <li><strong>Keamanan Informasi:</strong> Melindungi integritas dan privasi data Anda, baik dalam penyimpanan maupun dalam perjalanan.</li>
+    </ul>
+
+    <h2>Bergabunglah Bersama Kami!</h2>
+    <p>
+        Jika Anda mencari jasa pemasaran digital yang berkualitas, desain website mobile-friendly, dan solusi digital marketing lainnya, DepWeb Studio adalah pilihan yang tepat. Kami siap membantu Anda meningkatkan visibilitas online bisnis Anda dan mencapai kesuksesan pemasaran yang Anda impikan!
+    </p>
+    <p>
+        Hubungi kami hari ini untuk konsultasi gratis dan pelajari lebih lanjut tentang bagaimana kami dapat membantu bisnis Anda tumbuh di dunia digital.
+    </p>
+    <div class="hidden">digital marketing agency, desain website, SEO, pemasaran digital, keamanan siber, aplikasi perusahaan, marketing online, DepWeb Studio</div>
+    </section>
+</body>
+</html>
